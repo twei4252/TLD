@@ -33,27 +33,24 @@ const DrinksMenu = () => {
   ];
 
   return (
-    <section id="drinks-menu" className="bg-leather-950">
+    <section id="drinks-menu" className="py-20 sm:py-28 bg-leather-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="section-title">
-          <Beer className="section-title-icon" size={48} />
+          <Beer className="section-title-icon" size={56} />
           <h2 className="section-heading">Drinks Menu</h2>
-          <p className="section-subheading mb-6">Craft cocktails & local brews</p>
-          <a
-            href="#"
-            className="inline-flex items-center px-6 py-2 bg-leather-900 text-gold-400 rounded border border-gold-400 hover:bg-gold-400 hover:text-leather-900 transition-colors font-serif"
-          >
-            <Download size={20} className="mr-2" />
+          <p className="section-subheading mb-8">Craft cocktails & local brews</p>
+          <a href="#" className="btn-download">
+            <Download size={18} className="mr-2" />
             Download Drinks Menu (PDF)
           </a>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-4">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {menu.map((section) => (
             <div key={section.category} className="menu-card">
-              <h3 className="text-xl sm:text-2xl font-display text-gold-400 mb-2">{section.category}</h3>
-              <p className="text-leather-300 mb-4 text-sm font-serif">{section.description}</p>
-              <div className="space-y-3">
+              <h3 className="text-2xl sm:text-3xl font-display text-gold-400 mb-3">{section.category}</h3>
+              <p className="text-leather-300 mb-6 text-base font-serif">{section.description}</p>
+              <div className="space-y-4">
                 {section.items.map((item) => (
                   <div key={item.name} className="menu-item">
                     <div className="menu-item-header">
@@ -66,6 +63,18 @@ const DrinksMenu = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Full Spirits List Section */}
+        <div id="spirits-list" className="mt-12 lg:mt-16">
+          <div className="menu-card text-center">
+            <h3 className="text-3xl sm:text-4xl font-display text-gold-400 mb-4">Full Spirits List</h3>
+            <p className="text-lg text-leather-300 font-serif mb-6">Premium spirits, whiskeys, and specialty liquors</p>
+            <a href="#" className="btn-download">
+              <Download size={18} className="mr-2" />
+              Download Full Spirits Menu (PDF)
+            </a>
+          </div>
         </div>
       </div>
     </section>

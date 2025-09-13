@@ -60,72 +60,69 @@ const FoodMenu = () => {
   ];
 
   return (
-    <section id="food-menu" className="py-16 sm:py-24 bg-leather-950">
+    <section id="food-menu" className="py-20 sm:py-28 bg-leather-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <UtensilsCrossed className="mx-auto text-gold-400 mb-4" size={48} />
-          <h2 className="text-4xl sm:text-6xl font-display text-gold-400 mb-2">Food Menu</h2>
-          <p className="text-lg sm:text-xl font-serif text-leather-300 mb-6">Classic pub fare with a modern twist</p>
-          <a
-            href="#"
-            className="inline-flex items-center px-6 py-2 bg-leather-900 text-gold-400 rounded border border-gold-400 hover:bg-gold-400 hover:text-leather-900 transition-colors font-serif"
-          >
-            <Download size={20} className="mr-2" />
+        <div className="section-title">
+          <UtensilsCrossed className="section-title-icon" size={56} />
+          <h2 className="section-heading">Food Menu</h2>
+          <p className="section-subheading mb-8">Classic pub fare with a modern twist</p>
+          <a href="#" className="btn-download">
+            <Download size={18} className="mr-2" />
             Download Food Menu (PDF)
           </a>
         </div>
         
-        <div className="grid gap-4">
+        <div className="grid gap-6 lg:gap-8">
           {/* First row: Bites */}
           <div className="menu-card">
-            <h3 className="text-xl sm:text-2xl font-display text-gold-400 mb-2">{menu[0].category}</h3>
-            <p className="text-leather-300 mb-4 text-sm font-serif">{menu[0].description}</p>
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            <h3 className="text-2xl sm:text-3xl font-display text-gold-400 mb-3">{menu[0].category}</h3>
+            <p className="text-leather-300 mb-6 text-base font-serif">{menu[0].description}</p>
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
               {menu[0].items.map((item) => (
-                <div key={item.name} className="border-b border-leather-700/30 pb-3 last:border-0">
-                  <div className="flex justify-between items-start mb-1">
-                    <h4 className="text-base sm:text-lg font-serif font-semibold text-leather-100">{item.name}</h4>
-                    <span className="text-gold-400 font-display ml-4">{item.price}</span>
+                <div key={item.name} className="menu-item">
+                  <div className="menu-item-header">
+                    <h4 className="menu-item-title">{item.name}</h4>
+                    <span className="menu-item-price">{item.price}</span>
                   </div>
-                  <p className="text-sm text-leather-300">{item.description}</p>
+                  <p className="menu-item-description">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Second row: Chow and Soup & Salad */}
-          <div className="grid md:grid-cols-7 gap-4">
+          <div className="grid lg:grid-cols-7 gap-6">
             {/* Chow - spans 4 columns */}
-            <div className="md:col-span-4 menu-card">
-              <h3 className="text-xl sm:text-2xl font-display text-gold-400 mb-2">{menu[1].category}</h3>
-              <p className="text-leather-300 mb-4 text-sm font-serif">{menu[1].description}</p>
-              <div className="space-y-3">
+            <div className="lg:col-span-4 menu-card">
+              <h3 className="text-2xl sm:text-3xl font-display text-gold-400 mb-3">{menu[1].category}</h3>
+              <p className="text-leather-300 mb-6 text-base font-serif">{menu[1].description}</p>
+              <div className="space-y-4">
                 {menu[1].items.map((item) => (
-                  <div key={item.name} className="border-b border-leather-700/30 pb-3 last:border-0">
-                    <div className="flex justify-between items-start mb-1">
-                      <h4 className="text-base sm:text-lg font-serif font-semibold text-leather-100">{item.name}</h4>
-                      <span className="text-gold-400 font-display ml-4">{item.price}</span>
+                  <div key={item.name} className="menu-item">
+                    <div className="menu-item-header">
+                      <h4 className="menu-item-title">{item.name}</h4>
+                      <span className="menu-item-price">{item.price}</span>
                     </div>
-                    <p className="text-sm text-leather-300">{item.description}</p>
+                    <p className="menu-item-description">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right column: Soup & Salad and Add-ons - spans 3 columns */}
-            <div className="md:col-span-3 space-y-4">
+            <div className="lg:col-span-3 space-y-6">
               {/* Soup & Salad */}
               <div className="menu-card">
-                <h3 className="text-xl sm:text-2xl font-display text-gold-400 mb-2">{menu[2].category}</h3>
-                <p className="text-leather-300 mb-4 text-sm font-serif">{menu[2].description}</p>
-                <div className="space-y-3">
+                <h3 className="text-2xl sm:text-3xl font-display text-gold-400 mb-3">{menu[2].category}</h3>
+                <p className="text-leather-300 mb-6 text-base font-serif">{menu[2].description}</p>
+                <div className="space-y-4">
                   {menu[2].items.map((item) => (
-                    <div key={item.name} className="border-b border-leather-700/30 pb-3 last:border-0">
-                      <div className="flex justify-between items-start mb-1">
-                        <h4 className="text-base sm:text-lg font-serif font-semibold text-leather-100">{item.name}</h4>
-                        <span className="text-gold-400 font-display ml-4">{item.price}</span>
+                    <div key={item.name} className="menu-item">
+                      <div className="menu-item-header">
+                        <h4 className="menu-item-title">{item.name}</h4>
+                        <span className="menu-item-price">{item.price}</span>
                       </div>
-                      <p className="text-sm text-leather-300">{item.description}</p>
+                      <p className="menu-item-description">{item.description}</p>
                     </div>
                   ))}
                 </div>
@@ -133,12 +130,12 @@ const FoodMenu = () => {
 
               {/* Add-ons */}
               <div className="menu-card">
-                <h3 className="text-xl sm:text-2xl font-display text-gold-400 mb-3">Add-ons & Extras</h3>
-                <div className="space-y-2">
+                <h3 className="text-2xl sm:text-3xl font-display text-gold-400 mb-4">Add-ons & Extras</h3>
+                <div className="space-y-3">
                   {addOns.map((addon) => (
-                    <div key={addon.name} className="flex justify-between items-center border-b border-leather-700/30 pb-2 last:border-0">
-                      <span className="text-sm sm:text-base text-leather-200">{addon.name}</span>
-                      <span className="text-gold-400 font-display ml-4">{addon.price}</span>
+                    <div key={addon.name} className="flex justify-between items-center border-b border-leather-700/30 pb-3 last:border-0">
+                      <span className="text-base text-leather-200 font-serif">{addon.name}</span>
+                      <span className="text-gold-400 font-display font-bold ml-4">{addon.price}</span>
                     </div>
                   ))}
                 </div>
@@ -148,16 +145,16 @@ const FoodMenu = () => {
 
           {/* Third row: Street Tacos */}
           <div className="menu-card">
-            <h3 className="text-xl sm:text-2xl font-display text-gold-400 mb-2">{menu[3].category}</h3>
-            <p className="text-leather-300 mb-4 text-sm font-serif">{menu[3].description}</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+            <h3 className="text-2xl sm:text-3xl font-display text-gold-400 mb-3">{menu[3].category}</h3>
+            <p className="text-leather-300 mb-6 text-base font-serif">{menu[3].description}</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
               {menu[3].items.map((item) => (
-                <div key={item.name} className="border-b border-leather-700/30 pb-3 last:border-0">
-                  <div className="flex justify-between items-start mb-1">
-                    <h4 className="text-base sm:text-lg font-serif font-semibold text-leather-100">{item.name}</h4>
-                    <span className="text-gold-400 font-display ml-4">{item.price}</span>
+                <div key={item.name} className="menu-item">
+                  <div className="menu-item-header">
+                    <h4 className="menu-item-title">{item.name}</h4>
+                    <span className="menu-item-price">{item.price}</span>
                   </div>
-                  <p className="text-sm text-leather-300">{item.description}</p>
+                  <p className="menu-item-description">{item.description}</p>
                 </div>
               ))}
             </div>

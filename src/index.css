@@ -6,6 +6,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
   }
   
   body {
@@ -21,59 +22,86 @@
   }
 
   section {
-    @apply py-12;
+    @apply py-16 sm:py-20;
   }
 
   /* Improve touch targets on mobile */
   button, a {
     @apply min-h-[44px] min-w-[44px];
   }
+
+  /* Ensure proper z-index stacking */
+  .navbar {
+    z-index: 1000;
+  }
+
+  .mobile-menu {
+    z-index: 999;
+  }
 }
 
 @layer components {
   .menu-card {
-    @apply bg-leather-900/80 backdrop-blur-sm border border-leather-800/50 rounded-lg p-4 sm:p-6 shadow-xl;
+    @apply bg-leather-900/90 backdrop-blur-sm border border-leather-800/50 rounded-xl p-6 sm:p-8 shadow-2xl;
     background-image: linear-gradient(to bottom right, rgba(62, 41, 31, 0.9), rgba(26, 18, 14, 0.9));
+    transition: all 0.3s ease;
+  }
+
+  .menu-card:hover {
+    @apply border-gold-400/30 shadow-gold-400/10;
+    transform: translateY(-2px);
   }
 
   .section-title {
-    @apply text-center mb-8;
+    @apply text-center mb-12 sm:mb-16;
   }
 
   .section-title-icon {
-    @apply mx-auto text-gold-400 mb-3;
+    @apply mx-auto text-gold-400 mb-4 sm:mb-6;
   }
 
   .section-heading {
-    @apply text-4xl sm:text-6xl font-display text-gold-400 mb-2;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-display text-gold-400 mb-3 sm:mb-4;
   }
 
   .section-subheading {
-    @apply text-lg sm:text-xl font-serif text-leather-300;
+    @apply text-lg sm:text-xl lg:text-2xl font-serif text-leather-300 max-w-3xl mx-auto;
   }
 
   .menu-item {
-    @apply border-b border-leather-700/30 pb-3 last:border-0;
+    @apply border-b border-leather-700/30 pb-4 mb-4 last:border-0 last:mb-0;
   }
 
   .menu-item-header {
-    @apply flex justify-between items-start mb-1;
+    @apply flex justify-between items-start mb-2;
   }
 
   .menu-item-title {
-    @apply text-base sm:text-lg font-serif font-semibold text-leather-100;
+    @apply text-base sm:text-lg font-serif font-semibold text-leather-100 leading-tight;
   }
 
   .menu-item-price {
-    @apply text-gold-400 font-display ml-4;
+    @apply text-gold-400 font-display ml-4 text-lg font-bold flex-shrink-0;
   }
 
   .menu-item-description {
-    @apply text-sm text-leather-300;
+    @apply text-sm sm:text-base text-leather-300 leading-relaxed;
   }
 
   .accent-text {
     @apply text-gold-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gold-400 text-leather-950 rounded-lg hover:bg-gold-500 transition-all duration-300 text-base sm:text-lg font-serif font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-gold-400 text-gold-400 rounded-lg hover:bg-gold-400 hover:text-leather-950 transition-all duration-300 text-base sm:text-lg font-serif font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  }
+
+  .btn-download {
+    @apply inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-leather-900 text-gold-400 rounded-lg border border-gold-400 hover:bg-gold-400 hover:text-leather-900 transition-all duration-300 font-serif shadow-md hover:shadow-lg transform hover:-translate-y-1;
   }
 }
 
