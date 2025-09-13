@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-leather-950 font-sans text-leather-100 overflow-x-hidden;
+  }
+
+  h1, h2, h3 {
+    @apply font-display tracking-wider;
+  }
+
+  h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  section {
+    @apply py-12;
+  }
+
+  /* Improve touch targets on mobile */
+  button, a {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+@layer components {
+  .menu-card {
+    @apply bg-leather-900/80 backdrop-blur-sm border border-leather-800/50 rounded-lg p-4 sm:p-6 shadow-xl;
+    background-image: linear-gradient(to bottom right, rgba(62, 41, 31, 0.9), rgba(26, 18, 14, 0.9));
+  }
+
+  .section-title {
+    @apply text-center mb-8;
+  }
+
+  .section-title-icon {
+    @apply mx-auto text-gold-400 mb-3;
+  }
+
+  .section-heading {
+    @apply text-4xl sm:text-6xl font-display text-gold-400 mb-2;
+  }
+
+  .section-subheading {
+    @apply text-lg sm:text-xl font-serif text-leather-300;
+  }
+
+  .menu-item {
+    @apply border-b border-leather-700/30 pb-3 last:border-0;
+  }
+
+  .menu-item-header {
+    @apply flex justify-between items-start mb-1;
+  }
+
+  .menu-item-title {
+    @apply text-base sm:text-lg font-serif font-semibold text-leather-100;
+  }
+
+  .menu-item-price {
+    @apply text-gold-400 font-display ml-4;
+  }
+
+  .menu-item-description {
+    @apply text-sm text-leather-300;
+  }
+
+  .accent-text {
+    @apply text-gold-400;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-leather-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-leather-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-leather-600;
+  }
+}
