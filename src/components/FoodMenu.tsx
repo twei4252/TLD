@@ -28,6 +28,7 @@ const FoodMenu = () => {
         { name: "Chicken Wrap", description: "Grilled or fried chicken, lettuce, tomatoes, shredded cheese, garlic ranch", price: "$9" },
         { name: "Chicken Sandwich", description: "Grilled or fried chicken, lettuce, tomatoes, pickles, garlic aioli", price: "$9" },
         { name: "Cali Burrito", description: "Grilled steak, fries, guacamole, pico de gallo, sour cream, shredded cheese, served with salsa rojo or verde", price: "$10" },
+        { name: "TLD Hot Dog", description: "Hot dog with caramelized onions and our homemade dog sauce", price: "$7" },
         { name: "TLD Burrito", description: "Rice, black beans, shredded cheese, bell pepper, onion", price: "$5" }
       ]
     },
